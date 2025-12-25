@@ -66,5 +66,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Column Short Content rộng hơn */
+.ant-table .col-short-content {
+  min-width: 600px;
+  max-width: 800px;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.6;
+}
 
 

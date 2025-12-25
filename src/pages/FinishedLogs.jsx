@@ -36,6 +36,7 @@ export default function FinishedLogs() {
     {
       title: "Short Content",
       dataIndex: "short_content",
+      className: "col-short-content",
       render: (v) => <div style={{ whiteSpace: "pre-wrap", maxWidth: 700 }}>{v}</div>,
     },
     {
