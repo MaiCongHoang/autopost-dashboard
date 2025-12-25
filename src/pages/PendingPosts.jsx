@@ -56,6 +56,7 @@ export default function PendingPosts() {
     form.resetFields();
     form.setFieldsValue({
       schedule_date: dayjs(),
+      schedule_hour: dayjs().hour(),
     });
     setOpen(true);
   };
@@ -93,6 +94,7 @@ export default function PendingPosts() {
     const values = await form.validateFields();
     const payload = {
       schedule_date: values.schedule_date.format("YYYY-MM-DD"),
+      schedule_hour: values.schedule_hour,
       raw_content: values.raw_content,
     };
 
