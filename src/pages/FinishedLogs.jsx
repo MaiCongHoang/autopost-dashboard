@@ -30,7 +30,7 @@ export default function FinishedLogs() {
     {
       title: "Posted At",
       dataIndex: "posted_at",
-      className: "col-post-At",
+      className: "col-post_At",
       width: 180,
       render: (v) => v ? dayjs(v).format("YYYY-MM-DD HH:mm:ss") : "",
     },

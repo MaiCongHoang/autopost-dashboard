@@ -30,12 +30,15 @@ export default function PendingPosts() {
     {
       title: "Date",
       dataIndex: "schedule_date",
+      className: "col-post_At",
       render: (v) => v ? dayjs(v).format("YYYY-MM-DD") : "",
       width: 140,
     },
+    { title: "Hour", dataIndex: "schedule_hour", width: 90 },
     {
       title: "Raw Content",
       dataIndex: "raw_content",
+      className: "col-short-content",
       render: (v) => <div style={{ whiteSpace: "pre-wrap", maxWidth: 600 }}>{v}</div>,
     },
     {
@@ -55,6 +58,7 @@ export default function PendingPosts() {
     form.resetFields();
     form.setFieldsValue({
       schedule_date: dayjs(),
+      schedule_hour: dayjs().hour(),
     });
     setOpen(true);
   };
@@ -63,6 +67,7 @@ export default function PendingPosts() {
     setEditing(record);
     form.setFieldsValue({
       schedule_date: dayjs(record.schedule_date),
+      schedule_hour: record.schedule_hour,
       raw_content: record.raw_content,
     });
     setOpen(true);
@@ -91,6 +96,7 @@ export default function PendingPosts() {
     const values = await form.validateFields();
     const payload = {
       schedule_date: values.schedule_date.format("YYYY-MM-DD"),
+      schedule_hour: values.schedule_hour,
       raw_content: values.raw_content,
     };
 
@@ -138,6 +144,14 @@ export default function PendingPosts() {
             rules={[{ required: true, message: "Chọn ngày" }]}
           >
             <DatePicker style={{ width: "100%" }} />
+          </Form.Item>
+
+          <Form.Item
+            name="schedule_hour"
+            label="Schedule Hour (0-23)"
+            rules={[{ required: true, message: "Nhập giờ" }]}
+          >
+            <InputNumber min={0} max={23} style={{ width: "100%" }} />
           </Form.Item>
 
           <Form.Item

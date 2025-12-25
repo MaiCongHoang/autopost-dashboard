@@ -68,15 +68,15 @@ button:focus-visible {
 }
 /* Column Short Content rộng hơn */
 .ant-table .col-short-content {
-  min-width: 600px;
-  max-width: 1000px;
+  min-width: 1000px;
+  max-width: 1500px;
   white-space: normal;
   word-break: break-word;
   line-height: 1.6;
 }
 .ant-table .col-post_At {
-  min-width: 600px;
-  max-width: 1000px;
+  min-width: 200px;
+  max-width: 300px;
   white-space: normal;
   word-break: break-word;
   line-height: 1.6;
