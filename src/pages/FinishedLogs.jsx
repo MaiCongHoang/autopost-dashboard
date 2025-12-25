@@ -53,16 +53,13 @@ export default function FinishedLogs() {
         <Button onClick={fetchData}>Refresh</Button>
       </Space>
 
-<Table
-  columns={columns}
-  dataSource={rows}
-  loading={loading}
-  rowKey="id"
-  size="middle"
-  scroll={{ x: 1200 }}
-  pagination={{ pageSize: 10 }}
-/>
-
+      <Table
+        rowKey="id"
+        columns={columns}
+        dataSource={rows}
+        loading={loading}
+        pagination={{ pageSize: 10 }}
+      />
 
       <Drawer
         title={detail ? `Log #${detail.id}` : "Log"}
