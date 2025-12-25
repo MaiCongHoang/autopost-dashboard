@@ -30,6 +30,7 @@ export default function PendingPosts() {
     {
       title: "Date",
       dataIndex: "schedule_date",
+      className: "col-post_At",
       render: (v) => v ? dayjs(v).format("YYYY-MM-DD") : "",
       width: 140,
     },
@@ -37,6 +38,7 @@ export default function PendingPosts() {
     {
       title: "Raw Content",
       dataIndex: "raw_content",
+      className: "col-short-content",
       render: (v) => <div style={{ whiteSpace: "pre-wrap", maxWidth: 600 }}>{v}</div>,
     },
     {
